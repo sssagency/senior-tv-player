@@ -1,0 +1,4 @@
+const CACHE='senior-tv-shell-v29';const CORE=['./','./index.html','./app.js','./optimized-sync.js','./style.css','./config.js','./sample.mp4'];
+self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})())});
+self.addEventListener('fetch',event=>{const u=new URL(event.request.url);if(u.origin!==self.location.origin||event.request.method!=='GET'||u.pathname.includes('/api/'))return;event.respondWith((async()=>{try{const fresh=await fetch(event.request);if(fresh.ok){const c=await caches.open(CACHE);await c.put(event.request,fresh.clone())}return fresh}catch{const old=await caches.match(event.request);return old||new Response('Offline',{status:503})}})())});

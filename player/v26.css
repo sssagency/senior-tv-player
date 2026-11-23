@@ -1,0 +1,18 @@
+/* V2.6 – TV number first. No technician API URL input. */
+.setup-box { width:min(690px,92vw); }
+.setup-box .setup-eyebrow { margin-top:23px; }
+.setup-box #tv-number-input { font-size:clamp(26px,3.2vw,40px); letter-spacing:.12em; text-align:center; text-transform:uppercase; font-weight:850; padding:18px 14px; min-height:72px; }
+.setup-box #tv-number-input::placeholder {color:#9caec4}
+.setup-box .setup-actions { margin-top:16px; }
+.setup-service-status { background:#edf7f2; color:#286b54; border:1px solid #d7ecdd; border-radius:10px; padding:11px 14px; margin-top:15px; font-size:14px; font-weight:700; text-align:center; }
+.setup-service-status.error { background:#fff3ef; color:#a53d37; border-color:#f1d1ca; }
+.setup-box .statusline:not(:empty) {margin-top:12px;}
+@media(max-width:650px){.setup-screen{align-items:flex-start;overflow-y:auto}.setup-box{margin:18px auto;padding:24px 20px}.setup-box h1{font-size:28px}.setup-box p{font-size:14px}.setup-box .setup-actions{display:grid;grid-template-columns:1fr}.setup-box .btn{min-height:50px}.setup-box #tv-number-input{font-size:29px;min-height:65px}}
+@media(prefers-reduced-motion:reduce){.setup-box *{animation-duration:0.01ms!important}}
+/* The preview panel can grow taller than a short 720p TV. Never clip its heading. */
+.screen.setup-screen{overflow-y:auto;align-items:safe center;justify-content:safe center;padding:20px 0;overscroll-behavior:contain}
+.screen.setup-screen .setup-box{flex:0 0 auto;margin:auto;max-height:none}
+.setup-box .setup-eyebrow{margin-top:17px}
+.setup-box h1{margin:8px 0 11px}
+.setup-box .setup-actions{margin-top:12px}
+.setup-service-status{margin-top:9px;padding:9px 12px}
