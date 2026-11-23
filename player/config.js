@@ -3,7 +3,7 @@
  * Cloudflare Pages > Player 저장소의 player/config.js 에서 아래 값 수정.
  * 로컬 실행 (localhost/127.0.0.1)은 자동으로 로컬 Worker 8787 연결.
  */
-const PRODUCTION_WORKERS_URL = 'https://YOUR-SENIOR-TV-API.workers.dev';
+const PRODUCTION_WORKERS_URL = 'https://senior-tv-api.sss-education-tv.workers.dev';
 const IS_LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname);
 export const DEFAULT_API_URL = IS_LOCAL
   ? 'http://127.0.0.1:8787'
